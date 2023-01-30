@@ -15,12 +15,12 @@ pipeline {
         }
         stage('mavenbuild'){
             steps {
-                sh "mvn package -Dmaven.test.skip"
+                bat "mvn package -Dmaven.test.skip"
             }
         }
         stage('Create Zip') {
             steps {
-                sh "zip -r target.zip target"
+                bat 'powershell Compress-Archive -Path ".\\target" -DestinationPath "target.zip"'
             }
         }
     }
