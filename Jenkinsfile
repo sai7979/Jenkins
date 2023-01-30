@@ -1,9 +1,10 @@
 pipeline {
     agent any
     tools {
-        jdk 'JDK'
+        jdk 'JAVA_HOME'
         maven 'MAVEN_HOME'
     }
+
 
     stages {
         stage('GitHub project pull') {
